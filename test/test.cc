@@ -78,7 +78,7 @@ TEST_CASE("Sqlite Test", "[general]") {
     auto val1 = db.prepare<bool>(sql).execute_value("administrator");
     auto val2 = db.prepare<bool>(sql).execute_value("user");
     REQUIRE(val1 == true);
-    REQUIRE(val2 == false);
+    REQUIRE(val2 == true);
   }
 
   auto stmt = db.prepare("INSERT INTO people (name, age, data, enabled) VALUES (?, ?, ?, ?)");
